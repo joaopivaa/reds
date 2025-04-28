@@ -15,10 +15,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 
-@Tag(name = "Usuário", description = "Endpoints para gerenciar os dados do usuário") // Dizer que pertence à determinado controlador
+@Tag(name = "Usuário", description = "Endpoints para gerenciar os dados do usuário")
 public interface UsuarioControllerApi {
 
-	// Refere-se a operação documentada
 	@Operation(
 		summary = "Relatório de todos os usuários no sistema com paginação no cliente",
 		description = "Relatório de todos os usuários",
