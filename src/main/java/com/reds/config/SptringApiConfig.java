@@ -17,16 +17,12 @@ public class SptringApiConfig {
 		return new OpenAPI().info(info())
 							.externalDocs(
 								new ExternalDocumentation()
-									.description("IFSP")
-									.url("http://bri.ifsp.edu.br")
+									.description("Reds")
+									.url("http://reds.com.br")
 							)
 							.tags(Arrays.asList(
 									new Tag().name("Usuário").description("Gerencia o cadastro de usuário no sistema."),
-									new Tag().name("Aluno").description("Gerencia o cadastro de aluno no sistema."),
-									new Tag().name("Professor").description("Gerencia o cadastro de professor no sistema."),
-									new Tag().name("Avaliação").description("Gerencia o cadastro de avaliação no sistema."),
-									new Tag().name("Disciplina").description("Gerencia o cadastro de disciplina no sistema."),
-									new Tag().name("Cidade").description("Gerencia o cadastro de cidade no sistema.")
+									new Tag().name("Jogadores").description("Gerencia o cadastro de jogadores no sistema.")
 								)
 							);
 	}
@@ -36,7 +32,7 @@ public class SptringApiConfig {
 		return new Info().title("RESTfull API with java 19 and Spring Boot v. 3.1.2")
 						 .version("v1")
 						 .description("Descrição dos rescursos oferecidos pela API")
-						 .termsOfService("http://bri.ifsp.edu.br")
+						 .termsOfService("http://reds.com.br")
 						 .license(
 							new License().name("Apache 2.0")
 										 .url("http://www.apache.org/licenses/LICENSE-2.0")

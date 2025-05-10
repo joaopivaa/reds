@@ -17,7 +17,7 @@ import com.reds.web.response.MensagemSistema;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-@RestControllerAdvice(basePackages = "com.academico") // Captura exceções do projeto inteiro
+@RestControllerAdvice(basePackages = "com.reds") // Captura exceções do projeto inteiro
 public class GlobalExceptionsHandler {
 	
 	@Autowired

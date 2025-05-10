@@ -13,13 +13,18 @@ public enum PermissionsName {
 	private PermissionsName(String nomePermissions) {
 		this.nomePermissions = nomePermissions;
 	}
-	
-	public String getNomeRole() {
+
+	public String getNomePermissions() {
 		return nomePermissions;
 	}
 	
-	public static List<String> listPermissions(){
-		return List.of(CREATE.nomePermissions, UPDATE.nomePermissions, DELETE.nomePermissions, READ.nomePermissions);
+	public static List<String> listPermissions() {
+		return List.of(
+			CREATE.nomePermissions, 
+			UPDATE.nomePermissions, 
+			DELETE.nomePermissions, 
+			READ.nomePermissions
+		);
 	}
 	
 }

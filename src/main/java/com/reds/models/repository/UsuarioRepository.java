@@ -16,14 +16,9 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> { 	// <>
 	@Query(
 			"SELECT " + 
 					"u.idUsuario AS idUsuario, " +
-					"u.codUsuario AS codUsuario, " +
 					"u.nomeUsuario AS nomeUsuario, " +
 					"u.email AS email, " +
-					"u.tipo AS tipo, " +
-					"u.foto AS foto, " +
-					"c.nomeCidade AS nomeCidade " +
-					"FROM Usuario u " +
-					"LEFT JOIN u.cidade c"
+					"FROM REDS_USUARIO u "
 	)
 	List<UsuarioCidadeProjection> listagemUsuario();
 	
