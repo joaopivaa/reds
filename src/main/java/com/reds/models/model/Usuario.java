@@ -14,7 +14,6 @@ import jakarta.persistence.Table;
 
 @Entity // Objt/Entidade que está na memória que será persistido.
 @Table(name = "REDS_USUARIO") // Qual tabela fisica armazena o usuario.
-
 public class Usuario {
 	
 	private Long id_usuario;

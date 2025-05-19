@@ -15,10 +15,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> { 	// <>
 	
 	@Query(
 			"SELECT " + 
-					"u.idUsuario AS idUsuario, " +
-					"u.nomeUsuario AS nomeUsuario, " +
-					"u.email AS email, " +
-					"FROM REDS_USUARIO u "
+				"u.idUsuario AS idUsuario, " +
+				"u.nomeUsuario AS nomeUsuario, " +
+				"u.email AS email " +
+				"FROM Usuario u "
 	)
 	List<UsuarioCidadeProjection> listagemUsuario();
 	

@@ -15,7 +15,6 @@ import jakarta.persistence.Table;
 
 @Entity // Objt/Entidade que está na memória que será persistido.
 @Table(name = "REDS_ALTERNATIVA") // Qual tabela fisica armazena a alternativa.
-
 public class Alternativa {
 	private Long id_alternativa;
 	private String texto;

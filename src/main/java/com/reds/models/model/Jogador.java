@@ -10,18 +10,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity // Objt/Entidade que está na memória que será persistido.
 @Table(name = "REDS_JOGADOR") // Qual tabela fisica armazena o jogador.
-
 public class Jogador {
 	private Long id_jogador;
 	private String nome_jogador;
-	private Long potuacao;
+	private Long pontuacao;
 	
 	private Usuario usuario;
 	private Sala sala;
@@ -30,10 +28,10 @@ public class Jogador {
 		
 	}
 	
-	public Jogador(Long id_jogador, String nome_jogador, Long potuacao, Usuario usuario, Sala sala) {
+	public Jogador(Long id_jogador, String nome_jogador, Long pontuacao, Usuario usuario, Sala sala) {
 		this.id_jogador = id_jogador;
 		this.nome_jogador = nome_jogador;
-		this.potuacao = potuacao;
+		this.pontuacao = pontuacao;
 		this.usuario = usuario;
 		this.sala = sala;
 	}
@@ -57,16 +55,15 @@ public class Jogador {
 	public void setNome_jogador(String nome_jogador) {
 		this.nome_jogador = nome_jogador;
 	}
-	@Column(name = "potuacao")
-	public Long getPotuacao() {
-		return potuacao;
+	@Column(name = "pontuacao")
+	public Long getpontuacao() {
+		return pontuacao;
 	}
 
-	public void setPotuacao(Long potuacao) {
-		this.potuacao = potuacao;
+	public void setpontuacao(Long pontuacao) {
+		this.pontuacao = pontuacao;
 	}
 	
-	@MapsId
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 	public Usuario getUsuario() {
@@ -76,7 +73,7 @@ public class Jogador {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	@MapsId
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_sala",referencedColumnName = "id_sala")
 	public Sala getSala() {
@@ -106,7 +103,7 @@ public class Jogador {
 
 	@Override
 	public String toString() {
-		return "Jogador [id_jogador=" + id_jogador + ", nome_jogador=" + nome_jogador + ", potuacao=" + potuacao
+		return "Jogador [id_jogador=" + id_jogador + ", nome_jogador=" + nome_jogador + ", pontuacao=" + pontuacao
 				+ ", usuario=" + usuario + ", sala=" + sala + "]";
 	}
 	
