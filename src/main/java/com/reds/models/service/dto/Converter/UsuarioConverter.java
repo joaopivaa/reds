@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import com.reds.models.model.Usuario;
 import com.reds.models.repository.projection.UsuarioCidadeProjection;
 import com.reds.models.service.dto.request.UsuarioRequest;
+import com.reds.models.service.dto.response.LoginResponse;
 import com.reds.models.service.dto.response.UsuarioResponse;
 
 public class UsuarioConverter {
@@ -46,5 +47,19 @@ public class UsuarioConverter {
 
 				))
 				.collect(Collectors.toList());
+	}
+
+
+	public static LoginResponse usuarioToLoginResponse(Usuario usuario, String access_token, String refresh_token,
+			List<String> roles, List<String> permissions) {
+		return new LoginResponse(
+				usuario.getIdUsuario(),
+				usuario.getNomeUsuario(),
+				usuario.getEmail(),
+				access_token,
+				refresh_token,
+				roles,
+				permissions
+		);
 	}
 }

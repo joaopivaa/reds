@@ -128,4 +128,9 @@ public class Usuario {
 				+ senha + ", salas_jogadas=" + salas_jogadas + ", vitorias=" + vitorias + ", usuario=" + usuario + "]";
 	}
 
+	public boolean isAtivo() {
+		
+		return false;
+	}
+
 }
