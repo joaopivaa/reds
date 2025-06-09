@@ -72,7 +72,7 @@ public class JwtServiceImpl implements JwtService {
 
 	private Map<String, Object> generateClaims(Usuario usuario) {
 		List<UsuarioRolePermission> listaRolePermission = usuarioRolePermissionRepository.findUsuarioRolePermissionById(usuario.getIdUsuario());
-		List<String> roles = listaRolePermission.stream().map(urp -> urp.getRole().getRoleName().getNomeRole()).collect(Collectors.toSet()).stream().collect(Collectors.toList());
+		List<String> roles = listaRolePermission.stream().map(urp -> urp.getRole().getNomeRoles().getNomeRole()).collect(Collectors.toSet()).stream().collect(Collectors.toList());
 		List<String> permission = listaRolePermission.stream().map(urp -> urp.getPermissions().getNomePermissions().getNomePermissions()).collect(Collectors.toSet()).stream().collect(Collectors.toList());
 		Map<String,Object> claims = new HashMap<String, Object>();
 		claims.put("id", usuario.getIdUsuario());
