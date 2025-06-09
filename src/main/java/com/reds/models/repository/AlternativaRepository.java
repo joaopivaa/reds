@@ -10,6 +10,6 @@ import com.reds.models.model.Alternativa;
 
 public interface AlternativaRepository extends JpaRepository<Alternativa, Long> {
 	
-	@Query(value="SELECT a FROM ALTERNATIVA a LEFT JOIN PERGUNTA p WHERE a.idPergunta =: p.idPergunta")
-	Optional<Alternativa> findAlternativaById(@Param("id_Pergunta") Long id_Pergunta);
+	@Query("SELECT a FROM Alternativa a LEFT JOIN a.pergunta p WHERE p.id = :idPergunta")
+	Optional<Alternativa> findAlternativaById(@Param("idPergunta") Long idPergunta);
 }
