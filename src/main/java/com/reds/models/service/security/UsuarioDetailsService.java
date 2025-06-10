@@ -46,7 +46,7 @@ public class UsuarioDetailsService implements UserDetailsService {
 		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
 		
 		for(UsuarioRolePermission urp: urpList) {
-			authorities.add(new SimpleGrantedAuthority("ROLE_"+urp.getRole().getRoleName()));
+			authorities.add(new SimpleGrantedAuthority("ROLE_"+urp.getRole().getNomeRoles()));
 		}
 		for(UsuarioRolePermission urp: urpList) {
 			authorities.add(new SimpleGrantedAuthority(urp.getPermissions().getNomePermissions().name()));

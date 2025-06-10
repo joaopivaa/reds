@@ -18,8 +18,7 @@ public class Disciplina {
 	public Disciplina() {
 	}
 
-	public Disciplina(Long id_disciplina , String nome_disciplina) {
-		this.id_disciplina  = id_disciplina ;
+	public Disciplina(String nome_disciplina) {
 		this.nome_disciplina = nome_disciplina;
 	}
 	
