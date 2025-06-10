@@ -19,7 +19,6 @@ public class UsuarioConverter {
 		);
 	}
 	
-	
 	public static List<UsuarioResponse> toListUsuarioResponse(List<Usuario> listaUsuario) {
 		List<UsuarioResponse> listaUsuarioResponse = new ArrayList<UsuarioResponse>();
 
@@ -48,7 +47,6 @@ public class UsuarioConverter {
 				))
 				.collect(Collectors.toList());
 	}
-
 
 	public static LoginResponse usuarioToLoginResponse(Usuario usuario, String access_token, String refresh_token,
 			List<String> roles, List<String> permissions) {

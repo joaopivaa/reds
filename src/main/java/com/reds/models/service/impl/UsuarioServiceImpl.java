@@ -20,15 +20,12 @@ public class UsuarioServiceImpl implements UsuarioService { // Beans
 	
 	@Autowired // Cria a instância
 	private UsuarioRepository usuarioRepository; // Para gravação usa-se o repository
-	
 
 	@Override
 	public UsuarioResponse save(UsuarioRequest entity) {
 		
 		var usuario = UsuarioConverter.toUsuario(entity);
-		
 		usuario = usuarioRepository.saveAndFlush(usuario);
-		
 		var usuarioResponse = UsuarioConverter.toUsuarioResponse(usuario);
 		
 		return usuarioResponse; // Save and Flush retorna um objeto, entity é a própria usuario
@@ -41,7 +38,6 @@ public class UsuarioServiceImpl implements UsuarioService { // Beans
 						()-> new EntityNotFoundException(
 								String.format("Usuario não localizado %s", 
 								String.valueOf(id))));
-		
 		
 		usuario.setEmail(entity.getEmail());
 		usuario.setNomeUsuario(entity.getNomeUsuario());
@@ -75,5 +71,4 @@ public class UsuarioServiceImpl implements UsuarioService { // Beans
 		
 		return listaUsuarioResponse;
 	}
-
 }

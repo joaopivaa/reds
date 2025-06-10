@@ -8,7 +8,6 @@ public class JogadorRequest {
 	private Long id_Jogador;
 	private String nome_Jogador;
 	private Long pontuacao;
-	
 	private Long nome_Usuario;
 	private Long codigo_Sala;
 	
@@ -51,7 +50,7 @@ public class JogadorRequest {
 	@Schema(description = "O Codigo Da Sala", example = "ABCD12")
 	@NotBlank(message = "Tem Que Colocar o Codigo")
 	@Size(max = 100, message = "O Codigo deve conter até 6 caracteres.")
-	public Long geCodigo_Sala() {
+	public Long getCodigo_Sala() {
 		return codigo_Sala;
 	}
 
